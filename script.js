@@ -13,13 +13,15 @@ function randomColor() {
     }
     return color;
 }
-column[0].style.backgroundColor = 'rgb(' + randomColor()[0] + ',' + randomColor()[1] + ',' + randomColor()[2] + ')';
-console.log(column[0].style.backgroundColor);
 
-let mainColorRgb = '';
-mainColorRgb = 'rgb(' + myColor[0] + ',' + myColor[1] + ',' + myColor[2] + ')';
+let mainColorRgb = 'black';
 
 myColor = randomColor();
+mainColorRgb = 'rgb(' + myColor[0] + ',' + myColor[1] + ',' + myColor[2] + ')';
+mainColorHex = `#${myColor.map(x => x.toString(16)).join("").toUpperCase()}`;
+
+column[0].style.backgroundColor = mainColorHex;
+console.log(column[0].style.backgroundColor);
 
 // column[0].style.backgroundColor = 'rgb(' + [color].join(',') + ')';
 
