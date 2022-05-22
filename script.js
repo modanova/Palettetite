@@ -13,8 +13,9 @@ function randomColor() {
     }
     return color;
 }
-
-let mainColorRgb = 'black';
+let myColor = '';
+let mainColorRgb = '';
+let mainColorHex = '';
 
 myColor = randomColor();
 mainColorRgb = 'rgb(' + myColor[0] + ',' + myColor[1] + ',' + myColor[2] + ')';
@@ -23,5 +24,14 @@ mainColorHex = `#${myColor.map(x => x.toString(16)).join("").toUpperCase()}`;
 column[0].style.backgroundColor = mainColorHex;
 console.log(column[0].style.backgroundColor);
 
-// column[0].style.backgroundColor = 'rgb(' + [color].join(',') + ')';
+let secondColor = [];
+let secondColorRgb = '';
+let secondColorHex = '';
+secondColor = myColor.map(x => 255 - x);
+console.log(secondColor);
+secondColorRgb = 'rgb(' + secondColor[0] + ',' + secondColor[1] + ',' + secondColor[2] + ')';
+secondColorHex = `#${secondColor.map(x => x.toString(16)).join("").toUpperCase()}`;
 
+
+column[1].style.backgroundColor = secondColorHex;
+console.log(column[1].style.backgroundColor);
