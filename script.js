@@ -18,6 +18,14 @@ let myColor = '';
 let mainColorRgb = '';
 let mainColorHex = '';
 
+function rgbConstructor(values) {
+  return rgbColor = 'rgb(' + values[0] + ',' + values[1] + ',' + values[2] + ')';
+}
+
+function hexConsturctor(values) {
+  return `#${values.map(x => x.toString(16)).join("").toUpperCase()}`
+}
+
 myColor = randomRgbValues();
 mainColorRgb = 'rgb(' + myColor[0] + ',' + myColor[1] + ',' + myColor[2] + ')';
 mainColorHex = `#${myColor.map(x => x.toString(16)).join("").toUpperCase()}`;
