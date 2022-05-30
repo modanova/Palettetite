@@ -1,4 +1,5 @@
 const columns = document.getElementsByClassName('column');
+randomPalette();
 
 function randomHslValues() {
   return [Math.round(Math.random() * 360), Math.round(Math.random() * 100), Math.round(Math.random() * 100)]
@@ -6,6 +7,10 @@ function randomHslValues() {
 
 function hslRandom(values) {
   return `hsl(${values[0]}, ${values[1]}%, ${values[2]}%)`;
+}
+
+function randomPalette() {
+  for (c of columns) {c.style.backgroundColor=hslRandom(randomHslValues())}
 }
 
 function complemHsl(values) {
@@ -19,9 +24,3 @@ function complemHsl(values) {
   values[0] = hue;
   return values;
 }
-
-function randomPalette() {
-  for (c of columns) {c.style.backgroundColor=hslRandom(randomHslValues())}
-}
-
-
