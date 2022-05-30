@@ -4,7 +4,7 @@ applyRandomPalette();
 
 // Generate random HSL values
 function randomHslValues() {
-  return [Math.round(Math.random() * 360), Math.round(Math.random() * 100), Math.round(Math.random() * 100)];
+  return [Math.round(Math.random() * 360), Math.round(Math.random() * 50 + 50), Math.round(Math.random() * 50 + 50)];
 }
 
 // Return HSL format from values array
@@ -40,17 +40,19 @@ function randomSL(values) {
 // Generate a complementary palette array
 function complemPalette() {
   let palette = [];
-  let val = randomHslValues();
+  let val = [];
+  val = randomHslValues();
   palette.push(valToHsl(val));
-  let valCmpl = complemHsl(val);
+  let valCmpl = [];
+  valCmpl = complemHsl(val);
   palette.push(valToHsl(valCmpl));
   palette.push(valToHsl(randomSL(val)));
-  palette.push(valToHsl(randomSL(valCmpl)));
+  palette.push(valToHsl(randomSL(val)));
   palette.push(valToHsl(randomSL(valCmpl)));
   return palette;
 }
 
-//
+// Apply complementary palette to all columns
 function applyComplemPalette() {
   let palette = complemPalette();
   for (let i = 0; i < 5; i++) {
@@ -58,3 +60,8 @@ function applyComplemPalette() {
   }
 }
 
+// Swap individual element's colour
+function swapOne(el) {
+  el.parentElement.style.backgroundColor=valToHsl(randomHslValues());
+  return el;  
+}
