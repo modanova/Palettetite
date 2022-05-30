@@ -4,20 +4,21 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-function randomColor() {
-    let color = [];
+function randomRgbValues() {
+    let values = [];
     let x = 0;
     for(let i = 0; i < 3; i++) {
       x = Math.round(getRandomArbitrary(0, 255))
-      color.push(x);
+      values.push(x);
     }
-    return color;
+    return values;
 }
+
 let myColor = '';
 let mainColorRgb = '';
 let mainColorHex = '';
 
-myColor = randomColor();
+myColor = randomRgbValues();
 mainColorRgb = 'rgb(' + myColor[0] + ',' + myColor[1] + ',' + myColor[2] + ')';
 mainColorHex = `#${myColor.map(x => x.toString(16)).join("").toUpperCase()}`;
 
