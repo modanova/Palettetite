@@ -56,3 +56,7 @@ function swapOne(el) {
   el.parentElement.style.backgroundColor=toHslFormat(randomHslColor());
   return el;  
 }
+
+function abc() {
+  
+}

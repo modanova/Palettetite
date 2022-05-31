@@ -10,29 +10,35 @@
 
 <body>
     <div class="nav-bar row">
-      <label class="row btn_container">Generate a five-colour palette
+      <label class="row btn_container">
+        <ul>Generate a five-colour palette</ul>
         <button class="random btn" onclick="applyRandomPalette()">Random</button>
         <button class="compl btn" onclick="applyComplemPalette()">Complementary</button></label>
         <ul class="row stack-lf">
-            <li class="">about us</li>
-            <li class="">colour theory</li>
+            <button class="btn">about us</button>
+            <button class="btn">colour theory</button>
         </ul>
     </div>
         <div class="column-container row">
         <div class="column column1">
-          <button onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <button class="copy-color btn" onclick="console.log(this.querySelector('.color-value').innerHTML=this.parentElement.style.backgroundColor)"><i class="fa-solid fa-eye-dropper"></i><span class="color-value"></span></button>
+          <button class="btn" onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
         </div>
         <div class="column column2">
-          <button onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <button class="copy-color btn"><i class="fa-solid fa-eye-dropper"></i><span class="color-value"></span></button>
+          <button class="btn" onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
         </div>
         <div class="column column3">
-          <button onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <button class="copy-color btn"><i class="fa-solid fa-eye-dropper"></i><span class="color-value"></span></button>
+          <button class="btn" onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
         </div>
         <div class="column column4">
-          <button onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <button class="copy-color btn"><i class="fa-solid fa-eye-dropper"></i><span class="color-value"></span></button>
+          <button class="btn" onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
         </div>
         <div class="column column5">
-          <button onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
+          <button class="copy-color btn"><i class="fa-solid fa-eye-dropper"></i><span class="color-value"></span></button>
+          <button class="btn" onclick="swapOne(this)"><i class="fa-solid fa-arrows-rotate"></i></button>
         </div>
 </div>
   <script src="https://kit.fontawesome.com/2e59e30a69.js" crossorigin="anonymous"></script>

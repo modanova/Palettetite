@@ -2,19 +2,27 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: white;
+    padding: 0;
+    margin: 0;
   }
+
+  *, *:before, *:after {
+   box-sizing: border-box;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
 }
 .nav-bar {
-    background-color: white;
+    padding: 1em;
     justify-content: space-between;
+    width: 100%;
+    height: 5rem;
     position: absolute;
     top: 0;
-    width: 100%;
-
 }
+
 .btn_container {
     display: flex;
     align-items: center;
@@ -22,14 +30,40 @@ html, body {
 }
 
 .btn {
-    background-color: rgb(128, 116, 251);
-    border: none;
-    color: white;
-    padding: 15px 32px;
+    border-style: none;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0, 0.75);
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+
+
+.color-value {
+    color: white;
+}
+
+.btn:hover{
+  background-color: rgb(87, 88, 85);
 }
 
 .generate {
@@ -38,7 +72,6 @@ html, body {
 
 ul {
     list-style-type: none;
-    background-color: white;
     font-size: 1em;
     padding-inline-start: 0;
     gap: 1em;
@@ -46,23 +79,28 @@ ul {
 }
   
 .column-container {
+    padding-top: 5rem;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-    gap: 2px;
 }
 
 .column {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly
+}
+
+.copy-color {
+    
 }
 
 @media screen and (max-width: 900px) {
     .column-container {
         display: block;
-        height: 100%;
+        height: 100vw;
     }
     .column {
         width: 100%;
