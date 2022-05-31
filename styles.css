@@ -110,21 +110,13 @@ ul {
     gap: 1em;
 }
 
-.copy-color {
-    
-}
-
 @media screen and (max-width: 900px) {
     .column-container {
         display: block;
-        height: 100vw;
     }
     .column {
         width: 100%;
         height: 20%;
-    }
-    .nav-bar {
-        position: relative;
     }
 
   }
