@@ -1,7 +1,22 @@
 const columnsObj = document.getElementsByClassName('column');
 const columnArr = Object.values(document.getElementsByClassName('column'));
+const reload = document.querySelectorAll(".reload");
+var palette = [];
+
+// TO DO - display colour on individual swapping colours
+for (let btn of reload) {
+  btn.addEventListener("click", function (event) {
+    let parentDiv = event.target.parentElement.parentElement;
+    let span = parent.querySelector('span');
+    console.log(span.innerHTML);
+  });
+}
+// TO DO
+
+
 var currPalette;
 applyPalette(generateRandom());
+
 
 // Generate random HSL color
 function randomHslColor() {
@@ -30,17 +45,19 @@ function hslToHex([h, s, l]) {
   return `#${f(0)}${f(8)}${f(4)}`.toUpperCase();
 }
 
-
-// Apply a random palette to all columns, display in hex
-
-
 // Apply palette to all columns
 function applyPalette(paletteGen) {
+  palette = [];
   currPalette = paletteGen;
   for (let i = 0; i < 5; i++) {
     columnArr[i].style.backgroundColor = toHslFormat(currPalette[i]);
     columnArr[i].querySelector('.color-value').innerHTML = hslToHex(currPalette[i]);
   }
+  palette.push(currPalette);
+}
+
+function applyToOne() {
+    
 }
 
 // Generate a complementary colour from values array
